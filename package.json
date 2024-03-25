@@ -1,0 +1,49 @@
+{
+  "name": "@fizz/package-module-name",
+  "version": "0.1.0",
+  "description": "ADD DESCRIPTION",
+  "author": "Your Name",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.fizz.studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizzstudio/package-module-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fizzstudio/package-module-name/issues"
+  },
+  "homepage": "https://github.com/fizzstudio/package-module-name#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && api-extractor run --local --verbose",
+    "test": "ava",
+    "pretest": "npm run build",
+    "doc": "api-documenter markdown --input-folder ./temp --output-folder ./docs",
+    "pubpatch": "npm version patch && npm publish",
+    "pubminor": "npm version minor && npm publish",
+    "pubmajor": "npm version major && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/package-module-name.js",
+    "./stylesheet": "./dist/style.css"
+  },
+  "types": "./dist/package-module-name.d.ts",
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.22.30",
+    "@microsoft/api-extractor": "^7.36.3",
+    "@nabla/vite-plugin-eslint": "^1.5.0",
+    "ava": "^5.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
+  },
+  "dependencies": {
+    "@fizz/dom-utils": "^3.0.0"
+  }
+}
